@@ -8,15 +8,15 @@
   </head>
   <body>
     <div id="input-panel">
-      <input id="input-field" type="text" name="city" placeholder="City name">
-      <button id="input-button"type="button" name="button" onclick="buttonOnClickListener()">
+      <input id="input-field" type="text" placeholder="City name">
+      <button id="input-button" onclick="myButtonOnClickListener()">
         Search
       </button>
     </div>
 
     <div id="weather-container"></div>
 
-   <script id="weather-template" type="text/x-handlebars-template">
+    <script id="weather-template" type="text/x-handlebars-template">
        <h1>Weather in {{city}} is {{main}}</h1>
        <div id="weather-parameters">
        {{#each parameters}}

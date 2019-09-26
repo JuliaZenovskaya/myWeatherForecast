@@ -1,5 +1,5 @@
 
-function buttonOnClickListener() {
+function myButtonOnClickListener(){
     let city = document.getElementById("input-field").value;
     let request = new XMLHttpRequest();
     let requestURL = "https://api.openweathermap.org/data/2.5/weather?q="
@@ -11,8 +11,6 @@ function buttonOnClickListener() {
 
     request.onload = function () {
         if (request.status == 200) {
-            let city = request.response.name;
-
             let data = extractForecast(request.response);
             displayWeather(data);
         }
