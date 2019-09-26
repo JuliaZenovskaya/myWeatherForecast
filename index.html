@@ -1,40 +1,31 @@
-
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" type="text/css" href="styles\style.css">
+    <script type="text/javascript" src="handlebars.min.js"></script>
+  </head>
+  <body>
+    <div id="input-panel">
+      <input id="input-field" type="text" name="city" placeholder="City name">
+      <button id="input-button"type="button" name="button" onclick="buttonOnClickListener()">
+        Search
+      </button>
+    </div>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Weather</title>
-  <link id="favicon" rel="shortcut icon" type="image/png" href="" />
-  <link rel="stylesheet" type="text/css" href="styles/styles.css">
-  <script type="text/javascript" src="handlebars.min.js"></script>
-</head>
+    <div id="weather-container"></div>
 
-<body>
-
-  <div class="input-container">
-      <h1 id="input-label">City name: </h1>
-      <input id="input" type="text">
-      <button id="input-button" onclick="buttonClick()">Show</button>
-  </div>
-
-  <div id="weather-container"></div>
-
-  <script id="weather-template" type="text/x-handlebars-template">
-      <h1>Weather in {{city_name}} is {{main}}</h1>
-      <img src={{icon}}>
-      <div class="weather-parameters">
-      {{#each parameters}}
-          <div class="parameter">
-              <img class="parameter-icon" src={{icon}}>
-              <div class="parameter-name">{{name}}</div>
-              <div class="parameter-value">{{value}} {{{units}}}</div>
-          </div>
-      {{/each}}
-      </div>
-  </script>
-
-
-  <script type="text/javascript" src="script.js"></script>
-</body>
-
+   <script id="weather-template" type="text/x-handlebars-template">
+       <h1>Weather in {{city}} is {{main}}</h1>
+       <div id="weather-parameters">
+       {{#each parameters}}
+           <div id="parameter">
+               <div class="parameter-type">{{type}}</div>
+               <div class="parameter-value">{{value}} {{{units}}}</div>
+           </div>
+       {{/each}}
+       </div>
+   </script>
+  </body>
 </html>
