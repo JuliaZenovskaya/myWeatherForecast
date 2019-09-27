@@ -16,7 +16,7 @@ function myButtonOnClickListener() {
             displayWeather(data);
         }
         else {
-            extractErrorMessage(request.response);
+            //extractErrorMessage(request.response);
         }
     }
     request.send();
