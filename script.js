@@ -41,23 +41,23 @@ function displayWeather(forecast) {
 
 function extractErrorMessage(response) {
   let message = {
-    "message": response.message,
+    message: response.message,
   }
   return message;
 }
 
 function extractForecast(response) {
     let forecast = {
-        "city": "Weather in " + response.name + " is ",
-        "main": response.weather[0].description,
-        "parameters":
+        city: "Weather in " + response.name + " is ",
+        main: response.weather[0].description,
+        parameters:
             [
-                { "type": "Temperature", "value": response.main.temp, "units": "&deg;C"},
-                { "type": "Pressure", "value": response.main.pressure, "units": "hPa"},
-                { "type": "Wind speed", "value": response.wind.speed, "units": "m/s"},
-                { "type": "Humidity", "value": response.main.humidity, "units": "%"},
-                { "type": "Clouds", "value": response.clouds.all, "units": "%"},
-                { "type": "Visibility", "value": response.visibility, "units": "m"},
+                { type: "Temperature", value: response.main.temp, units: "&deg;C"},
+                { type: "Pressure", value: response.main.pressure, units: "hPa"},
+                { type: "Wind speed", value: response.wind.speed, units: "m/s"},
+                { type: "Humidity", value: response.main.humidity, units: "%"},
+                { type: "Clouds", value: response.clouds.all, units: "%"},
+                { type: "Visibility", value: response.visibility, units: "m"},
             ],
     };
 
