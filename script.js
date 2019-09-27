@@ -16,7 +16,7 @@ function myButtonOnClickListener() {
             displayWeather(data);
         }
         else {
-            alert(request.response.message);
+            extractErrorMessage(request.response);
         }
     }
     request.send();
@@ -34,7 +34,7 @@ function displayWeather(forecast) {
 function extractErrorMessage(response) {
   let message =
   {
-    "message": response.message;
+    "message": response.message,
   }
   return message;
 }
