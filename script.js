@@ -24,33 +24,31 @@ function myButtonOnClickListener() {
 }
 
 function displayErrorMessage(message) {
-  var source = document.getElementById("message-template").innerHTML;
-  var template = Handlebars.compile(source);
+  let source = document.getElementById("message-template").innerHTML;
+  let template = Handlebars.compile(source);
 
-  var html = template(message);
+  let html = template(message);
   document.getElementById("message-container").innerHTML = html;
 }
 
 function displayWeather(forecast) {
-    var source = document.getElementById("weather-template").innerHTML;
-    var template = Handlebars.compile(source);
+    let source = document.getElementById("weather-template").innerHTML;
+    let template = Handlebars.compile(source);
 
-    var html = template(forecast);
+    let html = template(forecast);
     document.getElementById("weather-container").innerHTML = html;
 }
 
 function extractErrorMessage(response) {
-  let message =
-  {
+  let message = {
     "message": response.message,
   }
   return message;
 }
 
 function extractForecast(response) {
-    let forecast =
-    {
-        "city": "Weather in" + response.name + " is ",
+    let forecast = {
+        "city": "Weather in " + response.name + " is ",
         "main": response.weather[0].description,
         "parameters":
             [
