@@ -1,5 +1,3 @@
-"use strict"
-
 function myButtonOnClickListener() {
     let city = document.getElementById("input-field").value;
     let request = new XMLHttpRequest();
