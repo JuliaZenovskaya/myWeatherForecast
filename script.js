@@ -14,14 +14,24 @@ function myButtonOnClickListener() {
         if (request.status == 200) {
             let data = extractForecast(request.response);
             displayWeather(data);
+            displayErrorMessage(null);
         }
         else {
-            extractErrorMessage(request.response);
+            let data = extractErrorMessage(request.response);
+            displayErrorMessage(data);
+            displayWeather(null);
         }
     }
     request.send();
 }
 
+function displayErrorMessage(message) {
+  var source = document.getElementById("message-template").innerHTML;
+  var template = Handlebars.compile(source);
+
+  var html = template(message);
+  document.getElementById("message-container").innerHTML = html;
+}
 
 function displayWeather(forecast) {
     var source = document.getElementById("weather-template").innerHTML;
@@ -42,7 +52,7 @@ function extractErrorMessage(response) {
 function extractForecast(response) {
     let forecast =
     {
-        "city": response.name,
+        "city": "Weather in" + response.name + " is ",
         "main": response.weather[0].description,
         "parameters":
             [
