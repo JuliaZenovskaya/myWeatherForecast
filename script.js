@@ -16,7 +16,7 @@ function myButtonOnClickListener() {
             displayWeather(data);
         }
         else {
-            alert(request.response.message);
+            extractErrorMessage(request.response);
         }
     }
     request.send();
@@ -29,6 +29,14 @@ function displayWeather(forecast) {
 
     var html = template(forecast);
     document.getElementById("weather-container").innerHTML = html;
+}
+
+function extractErrorMessage(response) {
+  let message =
+  {
+    "message": response.message;
+  }
+  return message;
 }
 
 function extractForecast(response) {
