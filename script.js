@@ -1,4 +1,4 @@
-function myButtonOnClickListener() {
+function OnSubmitListener() {
     let city = document.getElementById("input-field").value;
     let request = new XMLHttpRequest();
     let requestURL = "https://api.openweathermap.org/data/2.5/weather?q="

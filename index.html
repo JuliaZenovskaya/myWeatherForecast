@@ -7,10 +7,10 @@
   </head>
   <body>
     <div id="input-panel">
-      <input id="input-field" type="text" placeholder="City name">
-      <button id="input-button" onclick="myButtonOnClickListener()">
-        Search
-      </button>
+      <form onsubmit="OnSubmitListener(); return false;">
+        <input id="input-field" type="text" placeholder="City name">
+        <input type="submit" id="input-button" Value="Search">
+      </form>
     </div>
 
     <div id="weather-container"></div>
